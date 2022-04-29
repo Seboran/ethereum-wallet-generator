@@ -19,8 +19,10 @@ const paddedValue = computed(() =>
 // Uses a boolean to switch between 0 and 1, between "password" and "text"
 // See reveal function
 const inputTypeValues = ['password', 'text']
+const revealTextValues = ['REVEAL', 'HIDE']
 const inputTypeIndex = ref(0)
 const inputType = computed(() => inputTypeValues[inputTypeIndex.value])
+const revealText = computed(() => revealTextValues[inputTypeIndex.value])
 
 function reveal() {
   // Unary operator + to cast boolean into Number
@@ -39,5 +41,5 @@ function reveal() {
     autocomplete="new-password"
   />
   <button @click.prevent="useCopy(paddedValue)">COPY</button>
-  <button @click.prevent="reveal">REVEAL</button>
+  <button @click.prevent="reveal">{{ revealText }}</button>
 </template>
