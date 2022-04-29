@@ -43,12 +43,16 @@ function hasSameStartAndEnd() {
     (!endLength || endPublicKey === end.value)
   )
 }
+
+function invalid() {
+  console.error('Invalid ethereum address')
+}
 </script>
 
 <template>
   <form @submit.prevent="generateKeys">
     <div>
-      <GenerateButton @update="update" />
+      <GenerateButton @update="update" @invalid="invalid" />
     </div>
     <div>
       <PrivateKeyField :value="privateKey" />
