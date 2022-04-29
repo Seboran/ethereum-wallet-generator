@@ -2,9 +2,10 @@
   "name": "ethereum-wallet-generator",
   "version": "0.0.0",
   "scripts": {
+    "start": "node server.js",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port 5050",
+    "serve": "vite preview --port 5050",
     "test:unit": "vitest --environment jsdom",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },

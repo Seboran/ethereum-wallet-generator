@@ -1,4 +1,4 @@
-import generate from './components/generator/generate'
+import generate from '/src/components/generator/generate'
 
 onmessage = ({ data }) => {
   const { start, end } = data
@@ -12,7 +12,6 @@ onmessage = ({ data }) => {
     )
     publicKey = ethAddress
     privateKey = pk
-    console.log(publicKey);
   } while (!hasSameStartAndEnd(start, end, publicKey))
 
   postMessage({ publicKey, privateKey })

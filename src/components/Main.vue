@@ -7,7 +7,7 @@ import GenerateButton from './generator/GenerateButton.vue'
 import PrivateKeyField from './generator/PrivateKeyField.vue'
 import PublicKeyField from './generator/PublicKeyField.vue'
 
-const worker = new Worker('/src/worker.js', { type: 'module' })
+const worker = new Worker('/src/assets/worker.js', { type: 'module' })
 
 const publicKey = ref('')
 const privateKey = ref('')
