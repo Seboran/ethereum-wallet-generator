@@ -10,7 +10,11 @@ const publicKey = ref('')
 const privateKey = ref('')
 
 function generateKeys() {
-  const { privateKey: pk, ethereumAddress: ethAddress } = generate('1')
+  var array = new Uint32Array(10)
+  self.crypto.getRandomValues(array)
+  const { privateKey: pk, ethereumAddress: ethAddress } = generate(
+    array.join(''),
+  )
   publicKey.value = ethAddress
   privateKey.value = pk
 }
