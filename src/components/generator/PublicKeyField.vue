@@ -1,4 +1,6 @@
 <script setup>
+import { useCopy } from './useCopy.js'
+
 defineProps({
   value: {
     type: String,
@@ -9,9 +11,6 @@ defineProps({
 
 <template>
   Public key:
-  <input
-    placeholder="public key"
-    readonly
-    :value="value"
-  />
+  <input placeholder="public key" readonly :value="value" />
+  <button @click.prevent="useCopy(value)">COPY</button>
 </template>

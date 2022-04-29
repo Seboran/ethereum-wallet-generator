@@ -1,10 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue'
-import useClipboard from 'vue-clipboard3'
+import { useCopy } from './useCopy.js'
 
 const LENGTH_PRIVATE_KEY = 64
-
-const { toClipboard } = useClipboard()
 
 const props = defineProps({
   value: {
@@ -16,15 +14,6 @@ const props = defineProps({
 const paddedValue = computed(() =>
   props.value ? props.value.padStart(LENGTH_PRIVATE_KEY, '0') : '',
 )
-
-async function copy() {
-  try {
-    await toClipboard(paddedValue.value)
-    console.log('Copied to clipboard')
-  } catch (e) {
-    console.error('Failed to copy, see error:', e)
-  }
-}
 
 // Switch between clear and hidden private key value
 // Uses a boolean to switch between 0 and 1, between "password" and "text"
@@ -49,6 +38,6 @@ function reveal() {
     placeholder="private key"
     autocomplete="new-password"
   />
-  <button @click.prevent="copy">COPY</button>
+  <button @click.prevent="useCopy(paddedValue)">COPY</button>
   <button @click.prevent="reveal">REVEAL</button>
 </template>
