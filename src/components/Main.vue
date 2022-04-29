@@ -9,21 +9,46 @@ import generate from './generator/generate.js'
 const publicKey = ref('')
 const privateKey = ref('')
 
+const start = ref('')
+const end = ref('')
+
+function update({ start: st, end: en }) {
+  start.value = st
+  end.value = en
+}
+
 function generateKeys() {
+  publicKey.value = ''
+  privateKey.value = ''
   var array = new Uint32Array(10)
-  self.crypto.getRandomValues(array)
-  const { privateKey: pk, ethereumAddress: ethAddress } = generate(
-    array.join(''),
+
+  do {
+    self.crypto.getRandomValues(array)
+    const { privateKey: pk, ethereumAddress: ethAddress } = generate(
+      array.join(''),
+    )
+    publicKey.value = ethAddress
+    privateKey.value = pk
+  } while (!hasSameStartAndEnd())
+}
+
+function hasSameStartAndEnd() {
+  const startLength = start.value.length
+  const endLength = end.value.length
+  const startPublicKey = publicKey.value.slice(2, 2 + startLength)
+  const endPublicKey = publicKey.value.slice(-endLength)
+
+  return (
+    (!startLength || startPublicKey === start.value) &&
+    (!endLength || endPublicKey === end.value)
   )
-  publicKey.value = ethAddress
-  privateKey.value = pk
 }
 </script>
 
 <template>
   <form @submit.prevent="generateKeys">
     <div>
-      <GenerateButton />
+      <GenerateButton @update="update" />
     </div>
     <div>
       <PrivateKeyField :value="privateKey" />
