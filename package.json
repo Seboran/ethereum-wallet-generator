@@ -9,6 +9,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "bn.js": "^5.2.0",
+    "elliptic": "^6.5.4",
+    "js-sha3": "^0.8.0",
     "pinia": "^2.0.13",
     "vue": "^3.2.33",
     "vue-clipboard3": "^2.0.0"
