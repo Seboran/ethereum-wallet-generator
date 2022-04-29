@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 import useClipboard from 'vue-clipboard3'
 
+const LENGTH_PRIVATE_KEY = 64
+
 const { toClipboard } = useClipboard()
 
 const props = defineProps({
@@ -11,9 +13,13 @@ const props = defineProps({
   },
 })
 
+const paddedValue = computed(() =>
+  props.value ? props.value.padStart(LENGTH_PRIVATE_KEY, '0') : '',
+)
+
 async function copy() {
   try {
-    await toClipboard(props.value)
+    await toClipboard(paddedValue.value)
     console.log('Copied to clipboard')
   } catch (e) {
     console.error('Failed to copy, see error:', e)
@@ -39,7 +45,7 @@ function reveal() {
   <input
     :type="inputType"
     readonly
-    :value="value"
+    :value="paddedValue"
     placeholder="private key"
     autocomplete="new-password"
   />

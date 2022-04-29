@@ -4,11 +4,15 @@ import GenerateButton from './generator/GenerateButton.vue'
 import PrivateKeyField from './generator/PrivateKeyField.vue'
 import PublicKeyField from './generator/PublicKeyField.vue'
 
-const publicKey = ref('123public')
-const privateKey = ref('1234privé')
+import generate from './generator/generate.js'
+
+const publicKey = ref('')
+const privateKey = ref('')
 
 function generateKeys() {
-  console.log('Generate keys')
+  const { privateKey: pk, ethereumAddress: ethAddress } = generate('1')
+  publicKey.value = ethAddress
+  privateKey.value = pk
 }
 </script>
 

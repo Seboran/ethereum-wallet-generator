@@ -3,6 +3,9 @@ import BN from 'bn.js'
 import { keccak256 } from 'js-sha3'
 var ec2 = new ec('secp256k1')
 
+import { Buffer } from 'buffer'
+
+
 const MAX_PRIVATE_KEY = new BN('2').pow(new BN('256'))
 /**
  *
@@ -21,9 +24,8 @@ function generatePrivateKeyFromRandomInput(randomSeed) {
 function generatePublicKeyFromPrivateKey(pk) {
   var G = ec2.g // Generator point
   var pubPoint = G.mul(pk) // EC multiplication to determine public point
-
-  var x = pubPoint.getX().toBuffer() //32 bit x co-ordinate of public point
-  var y = pubPoint.getY().toBuffer() //32 bit y co-ordinate of public point
+  var x = pubPoint.getX().toArrayLike(Buffer) //32 bit x co-ordinate of public point
+  var y = pubPoint.getY().toArrayLike(Buffer) //32 bit y co-ordinate of public point
 
   var publicKey = Buffer.concat([x, y])
 
@@ -44,11 +46,10 @@ function generateEthereumAddressFromPublicKey(publicKey) {
 
 export default function (randomSeed) {
   const privateKeyBN = generatePrivateKeyFromRandomInput(randomSeed)
-  const privateKey = convertBNtoString(privateKeyBN)
   const ethereumAddress = generateEthereumAddressFromPublicKey(
     generatePublicKeyFromPrivateKey(privateKeyBN),
   )
-
+  const privateKey = convertBNtoString(privateKeyBN)
   return { privateKey, ethereumAddress }
 }
 
