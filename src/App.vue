@@ -1,26 +1,31 @@
 <script setup>
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
+import SourceCode from './components/SourceCode.vue'
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
+  <div id="grid">
+    <header>
+      <img
+        alt="Vue logo"
+        class="logo"
+        src="./assets/logo.svg"
+        width="125"
+        height="125"
+      />
 
-    <div class="wrapper">
-      <Header msg="Ethereum Wallet Generator" />
-    </div>
-  </header>
+      <div class="wrapper">
+        <Header msg="Ethereum Wallet Generator" />
+      </div>
+    </header>
 
-  <main>
-    <Main />
-  </main>
+    <main>
+      <Main />
+    </main>
+  </div>
+
+  <footer class="text-end text-muted"><SourceCode /></footer>
 </template>
 
 <style>
@@ -50,6 +55,10 @@ a,
   transition: 0.4s;
 }
 
+footer {
+  margin-top: 50px;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(202, 100%, 37%, 0.2);
@@ -62,7 +71,7 @@ a,
     place-items: center;
   }
 
-  #app {
+  #grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
@@ -72,12 +81,6 @@ a,
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
   }
 
   .logo {
