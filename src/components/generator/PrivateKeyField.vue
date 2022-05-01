@@ -1,6 +1,7 @@
 <script setup>
-import { ref, computed } from 'vue'
-import { useCopy } from './useCopy.js'
+import { ref, computed, onMounted } from 'vue'
+
+import CopyButton from './CopyButton.vue'
 
 const LENGTH_PRIVATE_KEY = 64
 
@@ -32,14 +33,26 @@ function reveal() {
 </script>
 
 <template>
-  Private key:
-  <input
-    :type="inputType"
-    readonly
-    :value="paddedValue"
-    placeholder="private key"
-    autocomplete="new-password"
-  />
-  <button @click.prevent="useCopy(paddedValue)">COPY</button>
-  <button @click.prevent="reveal">{{ revealText }}</button>
+  <div class="row">
+    <div class="col-sm-8">
+      <label for="privateKeyField">Private key</label>
+      <input
+        id="privateKeyField"
+        class="form-control"
+        :type="inputType"
+        readonly
+        :value="paddedValue"
+        placeholder="private key"
+        autocomplete="new-password"
+      />
+    </div>
+    <div class="col-sm-2 align-self-end">
+      <button class="btn btn-secondary" type="button" @click.prevent="reveal">
+        {{ revealText }}
+      </button>
+    </div>
+    <div class="col-sm-2 align-self-end">
+      <CopyButton :value="paddedValue" text="Copy private key"></CopyButton>
+    </div>
+  </div>
 </template>

@@ -45,19 +45,35 @@ function isHex(event) {
 </script>
 
 <template>
-  <input
-    type="text"
-    placeholder="start"
-    v-model="start"
-    @keypress="isHex($event)"
-    @input="update"
-  />
-  <input
-    type="text"
-    placeholder="end"
-    v-model="end"
-    @keypress="isHex($event)"
-    @input="update"
-  />
-  <button @click="submit">GENERATE</button>
+  <div class="row">
+    <div class="col-sm-4">
+      <label for="prefix">Address prefix</label>
+      <input
+        id="prefix"
+        class="form-control"
+        type="text"
+        placeholder="start"
+        v-model="start"
+        @keypress="isHex($event)"
+        @input="update"
+      />
+    </div>
+    <div class="col-sm-4">
+      <label for="suffix">Address suffix</label>
+      <input
+        id="suffix"
+        class="form-control"
+        type="text"
+        placeholder="end"
+        v-model="end"
+        @keypress="isHex($event)"
+        @input="update"
+      />
+    </div>
+    <div class="col-sm-4 align-self-end">
+      <button id="buttonGenerate" class="btn btn-primary" @click="submit">
+        GENERATE
+      </button>
+    </div>
+  </div>
 </template>

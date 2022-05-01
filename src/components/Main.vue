@@ -5,7 +5,9 @@ import GenerateButton from './generator/GenerateButton.vue'
 import PrivateKeyField from './generator/PrivateKeyField.vue'
 import PublicKeyField from './generator/PublicKeyField.vue'
 
-const worker = new Worker(new URL('./workers/worker.js', import.meta.url), { type: 'module' })
+const worker = new Worker(new URL('./workers/worker.js', import.meta.url), {
+  type: 'module',
+})
 
 const publicKey = ref('')
 const privateKey = ref('')
@@ -31,20 +33,20 @@ function invalid() {
 
 onMounted(async () => {
   await nextTick()
-  worker.onmessage = (({ data }) => {
+  worker.onmessage = ({ data }) => {
     publicKey.value = data.publicKey
     privateKey.value = data.privateKey
     loading.value = false
-  })
+  }
   worker.onmessageerror = (e) => {
-    loading.value = false;
-    console.error(e);
+    loading.value = false
+    console.error(e)
   }
 })
 </script>
 
 <template>
-  <form @submit.prevent="generateKeys">
+  <form class="col" @submit.prevent="generateKeys">
     <div>
       <GenerateButton @update="update" @invalid="invalid" />
     </div>
