@@ -29,6 +29,7 @@ onMounted(() => {
     data-toggle="tooltip"
     data-placement="top"
     :title="text"
+    :disabled="!value"
     @click.prevent="useCopy(value)"
   >
     <i class="bi bi-clipboard"></i>
