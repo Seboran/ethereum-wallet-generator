@@ -34,25 +34,30 @@ function reveal() {
 
 <template>
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-md-10">
       <label for="privateKeyField">Private key</label>
-      <input
-        id="privateKeyField"
-        class="form-control"
-        :type="inputType"
-        readonly
-        :value="paddedValue"
-        placeholder="private key"
-        autocomplete="new-password"
-      />
+      <div class="input-group">
+        <input
+          id="privateKeyField"
+          class="form-control"
+          :type="inputType"
+          readonly
+          :value="paddedValue"
+          placeholder="private key"
+          autocomplete="new-password"
+        />
+        <CopyButton :value="paddedValue" text="Copy private key"></CopyButton>
+      </div>
     </div>
-    <div class="col-sm-2 align-self-end">
-      <button class="btn btn-secondary" type="button" @click.prevent="reveal">
+
+    <div class="col-md-2 align-self-end">
+      <button
+        class="btn btn-secondary w-100"
+        type="button"
+        @click.prevent="reveal"
+      >
         {{ revealText }}
       </button>
-    </div>
-    <div class="col-sm-2 align-self-end">
-      <CopyButton :value="paddedValue" text="Copy private key"></CopyButton>
     </div>
   </div>
 </template>

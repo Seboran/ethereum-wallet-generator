@@ -11,8 +11,8 @@ defineProps({
 
 <template>
   <div class="row">
-    <div class="col-sm-10">
-      <label for="publicKeyField">Public key</label>
+    <label for="publicKeyField">Ethereum address</label>
+    <div class="input-group">
       <input
         id="publicKeyField"
         class="form-control"
@@ -20,8 +20,6 @@ defineProps({
         readonly
         :value="value"
       />
-    </div>
-    <div class="col-sm-2 align-self-end">
       <CopyButton :value="value" text="Copy public key"></CopyButton>
     </div>
   </div>

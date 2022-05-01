@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="text-primary">{{ msg }}</h1>
     <h3>
       Create your customized ethereum address.
     </h3>

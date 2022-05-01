@@ -46,7 +46,7 @@ function isHex(event) {
 
 <template>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-md-4">
       <label for="prefix">Address prefix</label>
       <input
         id="prefix"
@@ -58,7 +58,7 @@ function isHex(event) {
         @input="update"
       />
     </div>
-    <div class="col-sm-4">
+    <div class="col-md-4">
       <label for="suffix">Address suffix</label>
       <input
         id="suffix"
@@ -70,8 +70,8 @@ function isHex(event) {
         @input="update"
       />
     </div>
-    <div class="col-sm-4 align-self-end">
-      <button id="buttonGenerate" class="btn btn-primary" @click="submit">
+    <div class="col-md-4 align-self-end">
+      <button id="buttonGenerate" class="btn btn-primary w-100" @click="submit">
         GENERATE
       </button>
     </div>
