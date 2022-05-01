@@ -2,9 +2,9 @@
 
 This application lets you create a private key / ethereum address pair with custom suffix and prefix. [You can try app yourself](https://ethereum-wallet-generator.herokuapp.com/)
 
-Every generated address can be used in the ethereum blockchain, but please du not use them.
+Every generated address respect the ethereum specs (see the [Ethereum yellow paper](https://ethereum.github.io/yellowpaper/paper.pdf)), but I wouldn't advise you to use these addresses for real usage.
 
-## Why ?
+## What's the point of this app?
 
 This app shows that it is easy to create an ethereum address that almost looks like another ethereum address. Take these two ethereum address :
 
@@ -13,7 +13,7 @@ This app shows that it is easy to create an ethereum address that almost looks l
 0xadfce6b775ab236c46f16bf3a3476612a3dc0000
 ```
 
-They both share the same four ending 0s, but the private keys. Here are the respective private keys:
+They both share the same four ending 0s. Here are the respective private keys:
 
 ```
 d36d062e9f3ed2957458f5ba400c868d072fad69e8bb3f24420669317bd908e5
@@ -21,6 +21,7 @@ d36d062e9f3ed2957458f5ba400c868d072fad69e8bb3f24420669317bd908e5
 ```
 
 Now take this public/private pair:
+
 ```
 0x83eadc8f7fdf30b82f2c7b2493fe3b1baa22d9c8
 e832f898c14f716e1c1c47f150140096ca7f04deac11a0c1b38139f9af0c143d
@@ -28,7 +29,8 @@ e832f898c14f716e1c1c47f150140096ca7f04deac11a0c1b38139f9af0c143d
 
 Metamask only show the first three letters and last four chars of the public url
 
-If you wait long enough you can generate this pair that has the same prefix of length 3 and suffix of length 4:
+If you wait long enough you can generate a pair that has the same prefix of length 3 and suffix of length 4:
+
 ```
 
 ```
@@ -47,16 +49,16 @@ Note : using a suffix or prefix of cumulated length greater than 5 is really slo
 
 - [ ] Progress bar
 - [ ] Ethereum address history
-- [ ] Connexion with metamask
+- [ ] Connection with web3
 
 ## Project Setup
 
 ```sh
-npm install
+yarn run install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+yarn run dev
 ```
