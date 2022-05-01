@@ -8,7 +8,7 @@ import SourceCode from './components/SourceCode.vue'
   <div id="grid">
     <header>
       <img
-        alt="Vue logo"
+        alt="Ethereum logo"
         class="logo"
         src="./assets/logo.svg"
         width="125"
