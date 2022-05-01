@@ -1,13 +1,11 @@
 <script setup>
 import { onMounted, ref, nextTick } from 'vue'
 
-import generate from './generator/generate'
-
 import GenerateButton from './generator/GenerateButton.vue'
 import PrivateKeyField from './generator/PrivateKeyField.vue'
 import PublicKeyField from './generator/PublicKeyField.vue'
 
-const worker = new Worker('/src/assets/worker.js', { type: 'module' })
+const worker = new Worker(new URL('./workers/worker.js', import.meta.url), { type: 'module' })
 
 const publicKey = ref('')
 const privateKey = ref('')
