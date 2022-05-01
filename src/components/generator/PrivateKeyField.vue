@@ -20,7 +20,7 @@ const paddedValue = computed(() =>
 // Uses a boolean to switch between 0 and 1, between "password" and "text"
 // See reveal function
 const inputTypeValues = ['password', 'text']
-const revealTextValues = ['REVEAL', 'HIDE']
+const revealTextValues = ['SHOW', 'HIDE']
 const inputTypeIndex = ref(0)
 const inputType = computed(() => inputTypeValues[inputTypeIndex.value])
 const revealText = computed(() => revealTextValues[inputTypeIndex.value])
