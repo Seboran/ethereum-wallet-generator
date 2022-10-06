@@ -1,7 +1,7 @@
 <script setup>
-import Header from './components/Header.vue'
-import Main from './components/Main.vue'
-import SourceCode from './components/SourceCode.vue'
+import Header from "./components/Header.vue";
+import Main from "./components/Main.vue";
+import SourceCode from "./components/SourceCode.vue";
 </script>
 
 <template>
@@ -29,7 +29,7 @@ import SourceCode from './components/SourceCode.vue'
 </template>
 
 <style>
-@import './assets/base.css';
+@import "./assets/base.css";
 
 #app {
   max-width: 1280px;

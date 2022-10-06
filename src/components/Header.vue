@@ -2,17 +2,15 @@
 defineProps({
   msg: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <template>
   <div class="greetings">
     <h1 class="text-primary">{{ msg }}</h1>
-    <h3>
-      Create your customized ethereum address.
-    </h3>
+    <h3>Create your customized ethereum address.</h3>
   </div>
 </template>
 
