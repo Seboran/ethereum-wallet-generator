@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^5.1.10
     version: 5.2.6
   '@vitejs/plugin-vue':
-    specifier: ^2.3.1
-    version: 2.3.4(vite@4.0.5)(vue@3.3.4)
+    specifier: ^4.0.0
+    version: 4.0.0(vite@4.0.5)(vue@3.3.4)
   '@vue/eslint-config-prettier':
     specifier: ^8.0.0
     version: 8.0.0(eslint@8.44.0)(prettier@3.0.0)
@@ -426,11 +426,11 @@ packages:
     resolution: {integrity: sha512-mEo1sAde+UCE6b2hxn332f1g1E8WfYRu6p5SvTKr2ZKC1f7gFJXk4h5PyGP9Dt6gCaG8y8XhwnXWC6Iy2cmBng==}
     dev: true
 
-  /@vitejs/plugin-vue@2.3.4(vite@4.0.5)(vue@3.3.4):
-    resolution: {integrity: sha512-IfFNbtkbIm36O9KB8QodlwwYvTEsJb4Lll4c2IwB3VHc2gie2mSPtSzL0eYay7X2jd/2WX02FjSGTWR6OPr/zg==}
-    engines: {node: '>=12.0.0'}
+  /@vitejs/plugin-vue@4.0.0(vite@4.0.5)(vue@3.3.4):
+    resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^2.5.10
+      vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
       vite: 4.0.5
