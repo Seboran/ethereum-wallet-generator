@@ -47,7 +47,7 @@ devDependencies:
     specifier: ^7.0.0
     version: 7.1.0(eslint@8.44.0)(prettier@2.8.8)
   '@vue/test-utils':
-    specifier: ^2.0.0-rc.20
+    specifier: ^2.4.0
     version: 2.4.0(vue@3.3.4)
   eslint:
     specifier: ^8.5.0
