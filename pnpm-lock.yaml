@@ -21,8 +21,8 @@ dependencies:
     specifier: ^6.5.4
     version: 6.5.4
   js-sha3:
-    specifier: ^0.8.0
-    version: 0.8.0
+    specifier: ^0.9.0
+    version: 0.9.0
   pinia:
     specifier: ^2.1.6
     version: 2.1.6(vue@3.3.4)
@@ -1496,8 +1496,8 @@ packages:
       nopt: 6.0.0
     dev: true
 
-  /js-sha3@0.8.0:
-    resolution: {integrity: sha512-gF1cRrHhIzNfToc802P800N8PpXS+evLLXfsVpowqmAFR9uwbi89WvXg2QspOmXL8QL86J4T1EpFu+yUkwJY3Q==}
+  /js-sha3@0.9.0:
+    resolution: {integrity: sha512-xKYSYNH8nyjRd5hSrlznpbxQYfcNqTW+ugVB+HqwkvJgR+m1Z+49Xr3ooQwTgZLxbm6G+dv1gI8rKdcL2GyL4A==}
     dev: false
 
   /js-yaml@4.1.0:
