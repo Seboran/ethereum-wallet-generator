@@ -1,5 +1,11 @@
 # ethereum-wallet-generator
 
+## Moved project
+
+Everything was moved here: https://github.com/Seboran/monorepo
+
+## Introduction
+
 This application lets you create a private key / ethereum address pair with custom suffix and prefix. [You can try app yourself](https://seboran.github.io/ethereum-wallet-generator/)
 
 Every generated address respect the ethereum specs (see the [Ethereum yellow paper](https://ethereum.github.io/yellowpaper/paper.pdf)), but I wouldn't advise you to use these addresses for real usage.
